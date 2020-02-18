@@ -3,26 +3,43 @@ var config = require('./config.js');
 var T = new Twit(config);
 console.log('The bot has started');
 
-var retweet = function() {
+tweetIt();
+
+function tweetIt() {
   var params = {
-    q: 'corona, coronavirus',
+    q: 'Canada',
+    count: 1,
     result_type: 'recent',
     lang: 'en'    
   }
-  console.log('Running 1 ');
   var tweet = {
-    status: '#coding from node.js'
+    status: 'Retweeting most recent tweets about ' + params.q
   }
-  console.log('Running 1 ');
-  T.post('statuses/update', params, tweeted);
 
-  function tweeted(err,data,response) {
+  console.log(' Step 1');
+
+  function gotData(err, data, response) {
+    var tweets = data.statuses;
+    for (var i = 0; i < tweets.length; i++) {
+      console.log('NEWS '+ i + ' || ' + tweets[i].text);
+      var result = {
+        status: tweets[i].text
+      }
+      T.post('statuses/update', result, tweeted);
+    }
+  }
+
+  function tweeted(err, data, response) {
     if (err){
       console.log("Something went wrong!")
     } else {
       console.log("It worked!");
     }
   }
+  console.log(' Step 2');
+
+  T.post('statuses/update', tweet, tweeted);
+  T.get('search/tweets', params, gotData);
 }
 
 /*
@@ -48,6 +65,5 @@ T.stream('filter', {track: 'love'}, function(stream){
 
 // grab & retweet as soon as program is running...
 retweet();
-// retweet in every 50 minutes
-setInterval(retweet, 3000000);
+
 //*/

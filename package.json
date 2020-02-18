@@ -1,7 +1,7 @@
 {
   "name": "twbot",
   "version": "1.0.0",
-  "description": "",
+  "description": "Twitter Bot project using Node.js and JavaScript",
   "main": "bot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
