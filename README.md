@@ -6,4 +6,4 @@
 <img src="images/bot_logo2.png">
 
 ## DEMO
-<img src="images/demo1.PNG">
+<img src="images/Demo1.PNG">
