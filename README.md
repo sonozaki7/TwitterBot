@@ -2,8 +2,8 @@
 
  This project is intended to provide mental health support for those in need through the use of Twitter API and automated response, and retweet functions.
 
-##LOGO
+## LOGO
 <img src="images/bot_logo2">
 
-##DEMO
+## DEMO
 <img src="images/demo1">
