@@ -46,9 +46,6 @@ T.stream('filter', {track: 'love'}, function(stream){
 });
 
 
-
-
-
 // grab & retweet as soon as program is running...
 retweet();
 // retweet in every 50 minutes
