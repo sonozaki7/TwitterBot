@@ -4,7 +4,6 @@
 
 ## LOGO
 <img src="images/bot_logo2.png">
-![logo](images/bot_logo2.png)
 
 ## DEMO
 <img src="images/demo1.png">
