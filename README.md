@@ -1,6 +1,6 @@
 # TwitterBot
 
- This project is intended to provide mental health support for those in need through the use of Twitter API and automated response, and retweet functions.
+ This project is intended to provide personalized news feed for those in need.
 
 ## IMAGE
 <img src="images/bot_logo2.png">
