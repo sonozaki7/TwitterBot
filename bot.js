@@ -6,20 +6,45 @@ console.log('The bot has started');
 var math = require('mathjs');
 
 
-
 /*
-Main Loop
+  Main function
 */
+var params = {
+  q: 'christmas',
+  count: 2,
+  result_type: 'recent',
+  lang: 'en'    
+}
+var tweet = {
+  status: 'Retweeting most recent tweets about ' + params.q
+}
+
+function gotData(err, data, response) {
+  if (err) {
+    print('retweet', 'retweet ERROR!');
+  } else {
+    var tweets = data.statuses;
+    for (var i = 0; i < tweets.length; i++) {
+      console.log('NEWS '+ i + ' || ' + tweets[i].text);
+      var result = {
+        status: tweets[i].text
+      }
+      print('retweet', 'retweeting the searched tweet');
+      print('retweet', tweets[i].text);
+    }
+    print('retweet', 'retweet SUCCESS!');
+  }
+}
+T.get('search/tweets', params, gotData);
+process.exit();
+
+
 retweet();
 tweetRandomNumber();
 print('stream', 'Running stream');
 var stream = T.stream('statuses/filter', { track: '@cpen291g5' });
 stream.on('follow', followed);
-
 //end of the program
-process.exit();
-
-
 
 
 /*
@@ -41,6 +66,11 @@ function retweet() {
   print('retweet', 'params and tweet instantiated');
 
   function gotData(err, data, response) {
+    if (err) {
+      print('retweet', 'retweet ERROR!');
+    } else {
+      print('retweet', 'retweet SUCCESS!');
+    }
     var tweets = data.statuses;
     for (var i = 0; i < tweets.length; i++) {
       console.log('NEWS '+ i + ' || ' + tweets[i].text);
@@ -101,12 +131,12 @@ function print(method, str) {
 
 function isTweetSuccess(err, data, response) {
   if (err){
-    console.log("Something went wrong!");
+    print('tweet', 'tweet ERROR!');
   } else {
-    console.log("It worked!");
+    print('tweet', 'tweet SUCCESS!');
   }
 }
-
+process.exit();
 
 
 
