@@ -12,8 +12,10 @@ var T = new Twit({
     access_token:         auth_access_token,
     access_token_secret:  auth_access_token_secret,
 })
+
 var users = ["So_Nozaki"];
 var stream = T.stream('statuses/filter', {follow: users});
+
 stream.on('tweet', function (tweet) {
     if (users.indexOf(tweet.user.id_str) > -1) {
         console.log(tweet.user.name + ": " + tweet.text);
