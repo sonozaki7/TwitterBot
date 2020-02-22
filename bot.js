@@ -3,9 +3,9 @@ var config = require('./config.js');
 var T = new Twit(config);
 console.log('The bot has started');
 
-tweetIt();
+retweet();
 
-function tweetIt() {
+function retweet() {
   var params = {
     q: 'Canada',
     count: 1,
@@ -36,11 +36,35 @@ function tweetIt() {
       console.log("It worked!");
     }
   }
-  console.log(' Step 2');
+  console.log(' Step post');
 
   T.post('statuses/update', tweet, tweeted);
+
+  console.log(' Step get');
   T.get('search/tweets', params, gotData);
 }
+
+
+console.log(' Step stream');
+var stream = T.stream('statuses/filter', { track: '@cpen291g5' });
+stream.on('follow', followed);
+
+function followed(eventMsg) {
+  var name = eventMsg.source.name;
+  var screenName = eventMsg.source.screen_Name;
+  tweetIt('.@' + screenName + 'Thanks for follow!');
+}
+
+function tweetIt(txt) {
+  var r = math.floor(math.random()*100);
+  var tweetTxt = {
+    status: txt + ", number is " + r
+  }
+
+  T.post('statuses/update', tweetTxt, tweeted);
+}
+
+
 
 /*
 //
@@ -61,9 +85,5 @@ T.stream('filter', {track: 'love'}, function(stream){
 	});
 	
 });
-
-
-// grab & retweet as soon as program is running...
-retweet();
 
 //*/
