@@ -15,6 +15,7 @@ function intervalFunc(str1) {
   console.log("Hello!!!!  " + str1);
 }
 
+//Previous main
 /*
 setInterval()
 retweet();
@@ -26,6 +27,10 @@ stream.on('follow', followed);
 
 //end of the program
 process.exit();
+
+
+
+
 
 
 /*
@@ -117,34 +122,3 @@ function isTweetSuccess(err, data, response) {
     print('tweet', 'tweet SUCCESS!');
   }
 }
-process.exit();
-
-
-
-
-
-
-
-
-
-/*
-//
-//  tweet 'hello world!'
-//
-T.post('statuses/update', { 
-	status: 'hello world!' }, 
-	function(err, data, response) {
-  console.log(data)
-});
-
-
-T.stream('filter', {track: 'love'}, function(stream){
-	
-	stream.on('data', function(data){
-		console.log(util.inspect(data));
-		steram.destroy();
-	});
-	
-});
-
-//*/
