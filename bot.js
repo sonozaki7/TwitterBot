@@ -9,42 +9,23 @@ var math = require('mathjs');
 /*
   Main function
 */
-var params = {
-  q: 'christmas',
-  count: 2,
-  result_type: 'recent',
-  lang: 'en'    
-}
-var tweet = {
-  status: 'Retweeting most recent tweets about ' + params.q
+var not = setInterval(intervalFunc, 1000, "yo");
+
+function intervalFunc(str1) {
+  console.log("Hello!!!!  " + str1);
 }
 
-function gotData(err, data, response) {
-  if (err) {
-    print('retweet', 'retweet ERROR!');
-  } else {
-    var tweets = data.statuses;
-    for (var i = 0; i < tweets.length; i++) {
-      console.log('NEWS '+ i + ' || ' + tweets[i].text);
-      var result = {
-        status: tweets[i].text
-      }
-      print('retweet', 'retweeting the searched tweet');
-      print('retweet', tweets[i].text);
-    }
-    print('retweet', 'retweet SUCCESS!');
-  }
-}
-T.get('search/tweets', params, gotData);
-process.exit();
-
-
+/*
+setInterval()
 retweet();
 tweetRandomNumber();
 print('stream', 'Running stream');
 var stream = T.stream('statuses/filter', { track: '@cpen291g5' });
 stream.on('follow', followed);
+*/
+
 //end of the program
+process.exit();
 
 
 /*

@@ -1,9 +1,9 @@
 ///* 
 module.exports = {
-  consumer_key:         'mwTtI8XvQWanGiXHkS26eUKuj',
-  consumer_secret:      '4y5CXzIggOJtbmGdpRxHI6pV5sqi7m70wWzFJQkqZRGUlYxe7D',
-  access_token:         '1219660465963323393-FDasaQp4sSrNDMu0ODFmT8TTB5putS',
-  access_token_secret:  'q03K94ibCqB6T0nqP7CButytC92cYxRElj4ifppcs0ekY',
+  consumer_key:         '5sUyLVC1FtuvkAMhX7RVsxiAX',
+  consumer_secret:      'JIsZqROuSufaoPjxa4KAhSVe0nVDxxo5qMlgy8Ww9BO5zS2ygR',
+  access_token:         '1229541596565164032-xS9P7ib4NMj2NKavEcEzx8gHKa7r4g',
+  access_token_secret:  'dkNKiJKF5jGHNCBlSLipj0BskuRP1JaMLM2ejSbuhroyq',
   timeout_ms: 60*1000
 }
 //*/
