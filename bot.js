@@ -15,22 +15,9 @@ function intervalFunc(str1) {
   console.log("Hello!!!!  " + str1);
 }
 
-//Previous main
-/*
-setInterval()
-retweet();
-tweetRandomNumber();
-print('stream', 'Running stream');
-var stream = T.stream('statuses/filter', { track: '@cpen291g5' });
-stream.on('follow', followed);
-*/
 
 //end of the program
 process.exit();
-
-
-
-
 
 
 /*

@@ -7,4 +7,5 @@
 Source: https://dribbble.com/shots/2785898-Logo-Chat-Bot
 
 ## DEMO
-<img src="images/Demo1.PNG">
+<img src="images/twbot_main.PNG">
+<img src="images/twbot_feed.PNG">
